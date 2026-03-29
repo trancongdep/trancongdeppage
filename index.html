@@ -3,378 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giảng Viên An Toàn Lao Động Quốc Gia | Mr. An Toàn</title>
-    <meta name="description" content="Huấn luyện an toàn vệ sinh lao động chuyên nghiệp, cấp chứng chỉ nhanh chóng. Liên hệ Mr. An Toàn 0399496319.">
+    <title>Mr. An Toàn | Giảng Viên Huấn Luyện An Toàn Lao Động Chuyên Nghiệp</title>
+    <meta name="description" content="Huấn luyện an toàn vệ sinh lao động uy tín, cấp chứng chỉ nhanh. Liên hệ Mr. An Toàn 0399496319">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* CSS Reset cơ bản */
         :root {
-            --primary-color: #f39c12; /* Màu cam chủ đạo */
-            --secondary-color: #2c3e50; /* Màu xanh đen đậm */
-            --text-color: #333;
-            --light-bg: #ecf0f1;
+            --primary: #f39c12;
+            --secondary: #2c3e50;
+            --success: #27ae60;
+            --light: #f4f7f6;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        html { scroll-behavior: smooth; }
 
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #fff;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Container */
-        .container {
-            width: 85%;
-            margin: auto;
-            max-width: 1200px;
-        }
-
-        /* Header / Hero Section với hình ảnh nền */
+        /* Header Hero Section */
         .hero {
-            background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
-                              url('https://cdn.pixabay.com/photo/2016/11/29/01/16/construction-1866526_1280.jpg'); /* HÌNH ẢNH NỀN ĐẦU TRANG */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            height: 100vh; /* Chiều cao toàn màn hình */
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
+            color: white;
             text-align: center;
+            padding: 0 20px;
         }
 
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; text-transform: uppercase; }
+        .hero h1 span { color: var(--primary); }
+        .hero p { font-size: 1.4rem; margin-bottom: 2rem; }
 
-        .hero-content h1 span {
-            color: var(--primary-color);
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
+        /* Button Style */
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            border-radius: 25px;
+            padding: 15px 35px;
+            background: var(--primary);
+            color: var(--secondary);
             font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
             text-transform: uppercase;
-            transition: all 0.3s ease;
         }
+        .btn:hover { transform: scale(1.05); background: #e67e22; }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            background-color: #e67e22;
-        }
+        /* Services Section */
+        .section { padding: 80px 20px; text-align: center; }
+        .container { max-width: 1100px; margin: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
 
-        /* Phần Dịch Vụ */
-        .services {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 50px;
-        }
-
-        .section-title span {
-            border-bottom: 3px solid var(--primary-color);
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-item {
-            background: #fff;
+        .card {
+            background: var(--light);
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
         }
+        .card:hover { transform: translateY(-10px); }
+        .card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
 
-        .service-item:hover {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
+        /* Contact Section */
+        .contact { background: var(--secondary); color: white; padding: 60px 20px; }
+        .contact h2 { margin-bottom: 30px; font-size: 2.5rem; }
 
-        .service-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .service-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--secondary-color);
-        }
-
-        /* Phần Tại Sao Chọn Chúng Tôi */
-        .why-choose {
-            padding: 80px 0;
-            background-color: var(--light-bg);
-        }
-
-        .feature-list {
+        /* Floating Buttons (Zalo & Hotline) */
+        .floating-contact {
+            position: fixed;
+            bottom: 30px;
+            z-index: 9999;
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            flex-direction: column;
+            gap: 15px;
         }
-
-        .feature-item {
-            flex: 1 1 calc(50% - 20px);
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .feature-icon {
-            font-size: 2rem;
-            color: #27ae60;
-            margin-right: 20px;
-        }
-
-        /* Phần Liên Hệ */
-        .contact {
-            padding: 80px 0;
-            text-align: center;
-            color: var(--secondary-color);
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .contact p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-        }
-
-        .contact-info {
-            display: flex;
             justify-content: center;
-            gap: 30px;
+            color: white;
             font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+        .float-zalo { background: #0084FF; right: 30px; position: fixed; bottom: 110px; }
+        .float-phone { background: var(--success); right: 30px; position: fixed; bottom: 30px; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(39, 174, 96, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
         }
 
-        .contact-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            flex: 1;
-            max-width: 400px;
-        }
-
-        .contact-card i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .contact-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .contact-card a {
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* Nút Hotline bay */
-        .hotline-float {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: #27ae60;
-            color: #fff;
-            padding: 15px 20px;
-            border-radius: 30px;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-
-        /* Nút Zalo bay */
-        .zalo-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #0084FF;
-            color: #fff;
-            padding: 15px 20px;
-            border-radius: 30px;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-        }
-
-        /* Responsive cho điện thoại */
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .feature-item {
-                flex: 1 1 100%;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
 
     <header class="hero">
-        <div class="hero-content container">
-            <h1>CHUYÊN GIA <span>HUẤN LUYỆN AN TOÀN</span> LAO ĐỘNG</h1>
-            <p>Xây dựng văn hóa an toàn bền vững cho doanh nghiệp của bạn. <br> Chuyên nghiệp - Uy tín - Cấp chứng chỉ nhanh.</p>
-            <a href="#contact" class="btn">Đăng Ký Khóa Học</a>
+        <div class="container">
+            <h1>Mr. <span>An Toàn</span></h1>
+            <p>Giải Pháp Huấn Luyện An Toàn Lao Động Toàn Diện Cho Doanh Nghiệp</p>
+            <a href="tel:0399496319" class="btn">Tư vấn ngay: 0399 496 319</a>
         </div>
     </header>
 
-    <section class="services container" id="services">
-        <h2 class="section-title"><span>Dịch Vụ Huấn Luyện</span></h2>
-        <div class="service-grid">
-            
-            <div class="service-item">
-                <i class="fas fa-users service-icon"></i>
-                <h3>Huấn Luyện Các Nhóm</h3>
-                <p>Đào tạo đầy đủ 6 nhóm an toàn theo quy định Nghị định 44/2016/NĐ-CP.</p>
+    <section class="section container">
+        <h2>Dịch Vụ Cung Cấp</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-hard-hat"></i>
+                <h3>Huấn Luyện Nhóm 1-6</h3>
+                <p>Đào tạo an toàn lao động theo Nghị định 44 cho mọi đối tượng nhân viên.</p>
             </div>
-
-            <div class="service-item">
-                <i class="fas fa-bolt service-icon"></i>
+            <div class="card">
+                <i class="fas fa-bolt"></i>
                 <h3>An Toàn Chuyên Sâu</h3>
-                <p>An toàn Điện, Cơ khí, Hóa chất, Làm việc trên cao, Không gian hạn chế...</p>
+                <p>Huấn luyện an toàn điện, làm việc trên cao, không gian hạn chế và hóa chất.</p>
             </div>
-
-            <div class="service-item">
-                <i class="fas fa-file-contract service-icon"></i>
-                <h3>Tư Vấn Hồ Sơ</h3>
-                <p>Hỗ trợ doanh nghiệp hoàn thiện hồ sơ, đánh giá rủi ro an toàn vệ sinh lao động.</p>
+            <div class="card">
+                <i class="fas fa-file-signature"></i>
+                <h3>Hồ Sơ An Toàn</h3>
+                <p>Tư vấn xây dựng nội quy, quy trình và đánh giá rủi ro cho nhà máy, xí nghiệp.</p>
             </div>
-
         </div>
     </section>
 
-    <section class="why-choose" id="why">
+    <section class="section" style="background: #fff;">
         <div class="container">
-            <h2 class="section-title text-center"><span>Tại Sao Chọn Giảng Viên An Toàn?</span></h2>
-            <div class="feature-list">
-                
-                <div class="feature-item">
-                    <i class="fas fa-check-circle feature-icon"></i>
-                    <div>
-                        <h3>Kinh Nghiệm Thực Chiến</h3>
-                        <p>Giảng viên nhiều năm kinh nghiệm tại các KCN lớn.</p>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-                    <i class="fas fa-check-circle feature-icon"></i>
-                    <div>
-                        <h3>Hợp Pháp & Uy Tín</h3>
-                        <p>Cấp chứng chỉ an toàn hợp lệ theo quy định của Bộ LĐ-TB&XH.</p>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-                    <i class="fas fa-check-circle feature-icon"></i>
-                    <div>
-                        <h3>Học Phí Cạnh Tranh</h3>
-                        <p>Chi phí hợp lý, tối ưu nhất cho doanh nghiệp.</p>
-                    </div>
-                </div>
-
-                <div class="feature-item">
-                    <i class="fas fa-check-circle feature-icon"></i>
-                    <div>
-                        <h3>Linh Hoạt Thời Gian</h3>
-                        <p>Đào tạo trực tiếp tại nhà máy hoặc trực tuyến theo nhu cầu.</p>
-                    </div>
-                </div>
-
+            <h2>Tại Sao Chọn Mr. An Toàn?</h2>
+            <div class="grid" style="text-align: left;">
+                <p><i class="fas fa-check-circle" style="color:var(--success)"></i> Giảng viên giàu kinh nghiệm thực chiến tại các KCN.</p>
+                <p><i class="fas fa-check-circle" style="color:var(--success)"></i> Chứng chỉ cấp đúng quy định của Bộ LĐ-TB&XH.</p>
+                <p><i class="fas fa-check-circle" style="color:var(--success)"></i> Chi phí tối ưu, thời gian đào tạo linh hoạt.</p>
+                <p><i class="fas fa-check-circle" style="color:var(--success)"></i> Hỗ trợ hậu mãi, tư vấn pháp lý miễn phí.</p>
             </div>
         </div>
     </section>
 
-    <section class="contact container" id="contact">
-        <h2>LIÊN HỆ ĐĂNG KÝ NGAY</h2>
-        <p>Để nhận báo giá chi tiết và lộ trình huấn luyện an toàn lao động tốt nhất.</p>
-        
-        <div class="contact-info">
-            <div class="contact-card">
-                <i class="fas fa-user"></i>
-                <h4>Giảng viên phụ trách</h4>
-                <p><strong>Mr. An Toàn</strong></p>
-            </div>
-
-            <div class="contact-card">
-                <i class="fas fa-phone-alt"></i>
-                <h4>Hotline / Zalo</h4>
-                <a href="tel:0399496319">0399 496 319</a>
-            </div>
-        </div>
-    </section>
-
-    <a href="tel:0399496319" class="hotline-float"><i class="fas fa-phone-alt"></i> Gọi ngay</a>
-    <a href="https://zalo.me/0399496319" class="zalo-float" target="_blank"><i class="fas fa-comments"></i> Chat Zalo</a>
-
-    <footer>
+    <section class="contact" id="contact">
         <div class="container">
-            <p>&copy; 2026 Giảng Viên An Toàn. All rights reserved.</p>
-            <p>Design by "App tự động" của Mr. An Toàn.</p>
+            <h2>Kết Nối Với Tôi</h2>
+            <p>Mọi thắc mắc về an toàn lao động, vui lòng liên hệ trực tiếp:</p>
+            <div style="margin-top: 20px; font-size: 1.5rem;">
+                <p><i class="fas fa-phone-alt"></i> 0399.496.319</p>
+                <p><i class="fas fa-envelope"></i> trancongdep.safety@gmail.com</p>
+            </div>
         </div>
+    </section>
+
+    <footer style="padding: 20px; text-align: center; background: #1a252f; color: #7f8c8d;">
+        <p>&copy; 2026 trancongdep.xyz | Thiết kế cho Mr. An Toàn</p>
     </footer>
+
+    <a href="https://zalo.me/0399496319" target="_blank" class="float-btn float-zalo" title="Chat Zalo">
+        <i class="fab fa-facebook-messenger"></i> </a>
+    <a href="tel:0399496319" class="float-btn float-phone" title="Gọi hotline">
+        <i class="fas fa-phone-alt"></i>
+    </a>
 
 </body>
 </html>
